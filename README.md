@@ -12,10 +12,10 @@ social account.
 
 ## Install
 
-From the public repository (once published — see `PUBLISH-STEPS.md`):
+From the public repository (https://github.com/a1lane/a1lane):
 
 ```
-gemini extensions install <PUBLIC REPO URL>
+gemini extensions install https://github.com/a1lane/a1lane
 ```
 
 Then restart Gemini CLI, and sign in to A1 Lane:
@@ -28,7 +28,7 @@ Your browser opens on A1 Lane's OAuth sign-in; tokens are stored by Gemini
 CLI and refreshed automatically. Check the connection any time with `/mcp`
 — the `a1lane` server should list its 26 tools.
 
-For local testing before the repo is public:
+For local testing:
 
 ```
 gemini extensions link <path-to-this-folder>
@@ -53,15 +53,13 @@ then `/mcp auth a1lane` inside a session.
 - `skills/a1-lane/SKILL.md` — the A1 Lane agent skill (full tool guide).
 - `icon-1024.png` — the product icon.
 
-## Notes and known-unverified points
+## Notes
 
-- The manifest uses `httpUrl` for the streamable-HTTP server, the field
-  the Gemini CLI extension/MCP documentation describes for remote HTTP
-  servers. Some recent third-party write-ups say newer Gemini CLI builds
-  prefer `url` (streamable HTTP first, SSE fallback) and mark `httpUrl`
-  deprecated. If a future CLI rejects `httpUrl`, change the entry to
-  `"url": "https://a1lane.ai/mcp/v1"` — the endpoint is the same. Which
-  field the current release prefers is UNVERIFIED.
+- The manifest uses `httpUrl` for the streamable-HTTP server. That is the
+  field the official Gemini CLI MCP documentation defines for HTTP
+  streaming endpoints; `url` is the SSE endpoint field, so `httpUrl` is
+  correct for A1 Lane's streamable-HTTP server (verified against the
+  official docs 2026-11-09).
 - `oauth: { "enabled": true }` turns on Gemini CLI's OAuth handling; with
   discovery, the CLI finds A1 Lane's authorization endpoints from the
   server's metadata on first connection (A1 Lane supports CIMD and Dynamic
