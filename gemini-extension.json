@@ -1,0 +1,1 @@
+{"contextFileName":"GEMINI.md","description":"Draft, schedule and publish social posts from Gemini CLI, with a delivery receipt for every destination.","mcpServers":{"a1lane":{"httpUrl":"https://a1lane.ai/mcp/v1","oauth":{"enabled":true},"timeout":30000}},"name":"a1lane","version":"1.8.0"}
