@@ -2,7 +2,7 @@
 
 Draft, schedule and publish social posts from Gemini CLI, with a delivery
 receipt for every destination. The extension connects Gemini CLI to your
-own A1 Lane workspace through A1 Lane's hosted MCP server — 26 tools for
+own A1 Lane workspace through A1 Lane's hosted MCP server — 31 tools for
 accounts, media, drafts, approvals, scheduling, batches, receipts and
 engagement. Sign-in is OAuth in your browser; there is no API key to paste
 and no local server to run.
@@ -26,7 +26,7 @@ Then restart Gemini CLI, and sign in to A1 Lane:
 
 Your browser opens on A1 Lane's OAuth sign-in; tokens are stored by Gemini
 CLI and refreshed automatically. Check the connection any time with `/mcp`
-— the `a1lane` server should list its 26 tools.
+— the `a1lane` server should list its 31 tools.
 
 For local testing:
 

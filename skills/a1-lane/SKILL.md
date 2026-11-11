@@ -7,14 +7,19 @@ description: Draft, schedule and publish social posts and videos from an A1 Lane
 
 Use A1 Lane to run a user's social publishing from this client: check which accounts are connected, draft posts, send them through the workspace's approval flow, publish now or schedule, run batches, import media into the library, review what went out and whether it landed, and take posts down with explicit confirmation.
 
-## Tools (the live v1.8 surface — all 26)
+## Tools (the live v1.9 surface — all 31)
 
 Accounts and platform rules:
 - list_accounts — List the connected social accounts in the workspace, with platform and health.
-- get_platform_schema — A platform's posting rules: caption limits, media requirements and options. Check before writing or scheduling.
+- get_workspace — The workspace itself: plan, connection usage against its limit, timezone, approval policy.
+- get_connect_link — Where to connect a new social account, and which platforms can connect now.
+- disconnect_account — Disconnect a connected social account from the workspace.
+- get_platform_schema — A platform's posting rules: caption limits, media requirements and options, and which engagement metrics it reports. Check before writing or scheduling.
+- get_brand_instructions — The workspace's own brand instructions for assistants: approved claims, prohibited phrases, caption style.
 
 Media:
-- upload_media — Import an image or video into the workspace library from a public https link.
+- import_media — Import an image or video into the workspace library from a public https link.
+- list_media — List the media already in the workspace library.
 - create_upload_link — Create a one-time upload link so the user can add a file from their phone or computer.
 - get_upload_status — Check whether a file sent through an upload link has arrived.
 
@@ -22,9 +27,10 @@ Drafts and publishing:
 - create_draft — Create a draft post for one or more connected accounts.
 - update_draft_settings — Edit a draft or scheduled post before it sends: caption, media, destinations, timing.
 - request_approval — Send a draft through the workspace approval flow.
-- schedule_draft — Publish an approved draft now, at a set time, or in the next free slot.
+- publish_post — Publish an approved draft now, at a set time, or in the next free slot.
 - cancel_scheduled — Cancel a queued or scheduled post before it sends.
-- delete_draft — Delete A1 Lane's own record of a post. This never removes anything from a social platform.
+- delete_post_record — Delete A1 Lane's own record of a post. This never removes anything from a social platform.
+- duplicate_post — Copy an existing post as a new draft.
 - submit_batch — Set up many posts at once: a week of content or a content calendar.
 - get_batch_status — Check a batch's delivery, destination by destination.
 
@@ -43,7 +49,6 @@ Engagement:
 - get_post_engagement — A post's views, likes, comments and shares, per destination.
 - get_engagement_rollup — Engagement totals across accounts and posts over a period.
 - get_best_times — The best weekday and hour to post on an account.
-- get_engagement_coverage — Which engagement metrics each platform actually reports.
 
 ## Rules the client follows
 

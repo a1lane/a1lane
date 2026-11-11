@@ -12,10 +12,10 @@ for every destination.
   `get_platform_schema` before writing or scheduling for any platform —
   it carries that platform's caption limits, media requirements and
   options.
-- Media comes in through `upload_media` (public https link) or a one-time
+- Media comes in through `import_media` (public https link) or a one-time
   upload link (`create_upload_link`, checked with `get_upload_status`).
 - The publishing order is always: `create_draft` → `request_approval` →
-  (a human approves in A1 Lane) → `schedule_draft`. Use
+  (a human approves in A1 Lane) → `publish_post`. Use
   `update_draft_settings` to adjust a draft, `cancel_scheduled` to stop
   one before it sends, and `submit_batch` / `get_batch_status` for many
   posts at once.
@@ -23,8 +23,9 @@ for every destination.
   `get_verification_status`. Summaries: `get_delivery_digest`;
   problems: `list_attention_items` and `resolve_attention`.
 - Engagement: `get_post_engagement`, `get_engagement_rollup`,
-  `get_best_times`, `get_engagement_coverage` (which metrics each
-  platform actually reports — never present an unreported metric as zero).
+  `get_best_times`. Which metrics each
+  platform actually reports is part of `get_platform_schema`'s answer —
+  never present an unreported metric as zero.
 
 ## Rules (from the A1 Lane skill — they bind every workflow)
 
@@ -33,7 +34,7 @@ for every destination.
 - An uncertain delivery is never re-sent automatically; the user must accept the duplicate-post risk before any resend.
 - A destination is only called live when the platform's read-back confirms it; where a platform offers no read-back, report it as Delivered (limited), never as verified.
 
-`delete_draft` only deletes A1 Lane's own record of a post; it never
+`delete_post_record` only deletes A1 Lane's own record of a post; it never
 removes anything from a social platform. `pause_workspace` pauses or
 resumes all publishing for the workspace. `get_handoff_pack` gives the
 steps to finish a post inside the platform's own app when a destination

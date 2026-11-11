@@ -27,14 +27,14 @@ documented OAuth switch).
    the CLI, `/mcp auth a1lane`, complete the OAuth sign-in with the
    reviewer account (never the founder's tenant-zero workspace — run the
    workspace fingerprint check in the sitting pack first), run `/mcp`
-   and confirm 26 tools, then one draft → read-back proof with NO
+   and confirm 31 tools, then one draft → read-back proof with NO
    publish. The full draft → approval → publish → receipt journey on
    Bluesky stays a separate, later proof.
 4. **Tag a release (owner: Pax) — STILL OWED.** No tags or releases
-   exist yet (checked 2026-11-09). Tag `v1.8.0` on the current main.
+   exist yet (checked 2026-11-09). Tag `v1.9.0` on the current main.
    `gemini extensions update` reads the version from
    `gemini-extension.json`; bump `version` on every change. The shipped
-   version is `1.8.0`, matching the frozen MCP surface — if the
+   version is `1.9.0`, matching the MCP surface (synced 2026-11-11) — if the
    extension's own versioning should diverge from the server surface
    later, record the decision here.
 5. **Announce (owner: Pax).** Add the install command to A1 Lane's MCP
